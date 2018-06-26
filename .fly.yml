@@ -1,0 +1,19 @@
+app: fly-sentiment-analyzer
+files:
+  - client/build/index.html
+  - client/build/static/js/main.82baf497.js
+  - client/build/static/js/main.82baf497.js.map
+  - client/build/static/css/main.e1ef031f.css
+  - client/build/static/css/main.e1ef031f.css.map
+  - client/build/asset-manifest.json
+  - client/build/favicon.ico
+  - client/build/manifest.json
+  - client/build/service-worker.js
+config:
+  "STATIC_FILES_BASE_FOLDER": "client/build"
+  "FETCH_COUNT": 100
+  "AZURE_API_URL": 'https://westus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment'
+  GITHUB_API_TOKEN:
+    fromSecret: GITHUB_API_TOKEN
+  AZURE_SENTIMENT_API_TOKEN:
+    fromSecret: AZURE_SENTIMENT_API_TOKEN

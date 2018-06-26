@@ -1,0 +1,6 @@
+.fly.secrets.yml
+node_modules
+.env
+.vscode
+client/node_modules
+.DS_Store

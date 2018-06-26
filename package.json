@@ -1,0 +1,15 @@
+{
+  "name": "fly-sentiment-analyzer",
+  "version": "1.0.0",
+  "description": "Sentiment analyzer example for fly.io",
+  "main": "index.js",
+  "dependencies": {
+    "mime-types": "^2.1.18"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raja Rao DV",
+  "license": "ISC"
+}
