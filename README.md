@@ -17,7 +17,7 @@ This app runs on superfast fly.io's edge servers and shows overall sentiment of 
 Live app is running on fly.io's edge servers here:
 https://fly-sentiment-analyzer.edgeapp.net/
 
-## Installation
+# Installation
 
 This repo has both the fly.io's server and React client (in /client). Below are the steps to install and run both of them.
 
@@ -54,13 +54,13 @@ This repo has both the fly.io's server and React client (in /client). Below are 
     6.5 Set the access token to environment variable `export FLY_ACCESS_TOKEN=<your-token>`
     <img src="fly-access-token.png" />
 
-## Running locally
+# Running locally
 After all the installation work, do the following:
 
 1. Run `fly server`
 2. Open `localhost:3000`
 
-## Running on fly.io's edge servers
+# Running on fly.io's edge servers
 After all the installation work, do the following:
 
 1. Run `fly login` and login from the command line
@@ -72,7 +72,7 @@ After all the installation work, do the following:
 7. Your app should be running at `https://<your-app-name>.edgeapp.net/`
 
 
-## React client 
+# React client 
 **Read this section only if you plan to update the React client.**
 
 The client is inside `/client` folder. If you want to make changes, it's based on `create-react-app`.
@@ -95,7 +95,7 @@ After you are done making changes to the client app, do the following:
 
 1.  Make sure to run `npm run build` to build a production version.
 
-2. Don't forget to update the newer versions of the JS, CSS files in `.fly.yml`. Currently the fly server needs us to manually add all the files into `.fly.yml`.
+2. Don't forget to update the newer versions of the JS, CSS files in `.fly.yml`. Currently the fly server needs us to manually add all the individual files that are part of the React production app into `.fly.yml`.
 3. The following shows the list of files that are being served in the current production app.
 
 ```
