@@ -1,5 +1,8 @@
 # 📊Sentiment Analyzer
-This app runs on superfast fly.io's edge servers and shows overall sentiment of a Github user who has opened one of more issues on a Repo. 
+This app runs on the superfast fly.io's edge servers. This is not a **node.js** app but a **fly app**. It shows the overall sentiment of a Github user who has opened one of more issues on a given Repo. 
+
+The live app is running on fly.io's edge servers here:
+https://fly-sentiment-analyzer.edgeapp.net/
 
 <img src="snapshot.png" />
 
@@ -11,17 +14,30 @@ This app runs on superfast fly.io's edge servers and shows overall sentiment of 
 5. Combines both the Github issues and the sentiment score and returns to the React client.
 5. Finally the React client displays a graph and score on the React client.
 
-
-## Live App
-
-Live app is running on fly.io's edge servers here:
-https://fly-sentiment-analyzer.edgeapp.net/
-
 # Installation
 
+## Install fly.io
+1. Install <a href="http://nodejs.org/" target="_blank">Node.js</a> 
+2. Open Terminal and run `npm install -g @fly/fly`
+3. Set `FLY_ACCESS_TOKEN` for the CLI
+
+    3.1 Create a <a href="https://fly.io/app/sign-up" target="_blank"> fly.io account</a>
+
+    3.2 Go to `Accounts | Settings | Access tokens`
+
+    3.3 Click on `Create access token` and enter some useful name like your app's name.
+
+    3.4 Copy the access token
+    
+    3.5 Set the access token to environment variable `export FLY_ACCESS_TOKEN=<your-token>`
+    <img src="fly-access-token.png" />
+
+
+## Install the code
 This repo has both the fly.io's server and React client (in /client). Below are the steps to install and run both of them.
 
-1. `npm install -g @fly/fly`
+
+1. `git clone https://github.com/rajaraodv/fly-sentiment-analyzer.git`
 2. Create `.fly.secrets.yml` file on the root
 3. Add `GITHUB_API_TOKEN` and `AZURE_SENTIMENT_API_TOKEN` into the `.fly.secrets.yml` file
 
@@ -41,18 +57,6 @@ This repo has both the fly.io's server and React client (in /client). Below are 
     ```    
 5. Update `AZURE_API_URL` to math your Azure's API endpoint. I had selected **US West 2** location, so the Azure's location has: `westus2`. Your's may be different.
 
-6. Set `FLY_ACCESS_TOKEN` for the CLI
-
-    6.1 Create a <a href="https://fly.io/app/sign-up" target="_blank"> fly.io account</a>
-
-    6.2 Go to `Accounts | Settings | Access tokens`
-
-    6.3 Click on `Create access token` and enter some useful name like your app's name.
-
-    6.4 Copy the accesstoken
-    
-    6.5 Set the access token to environment variable `export FLY_ACCESS_TOKEN=<your-token>`
-    <img src="fly-access-token.png" />
 
 # Running locally
 After all the installation work, do the following:
