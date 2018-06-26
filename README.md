@@ -72,7 +72,9 @@ After all the installation work, do the following:
 7. Your app should be running at `https://<your-app-name>.edgeapp.net/`
 
 
-### React client
+## React client 
+**Read this section only if you plan to update the React client.**
+
 The client is inside `/client` folder. If you want to make changes, it's based on `create-react-app`.
 To run it locally do the following:
 
@@ -82,17 +84,33 @@ To run it locally do the following:
 4. The React dev server should start at port `3001`.
 
 Notes:
-1. The `/client/package.json` file of the React app has two changes.
+The `/client/package.json` file of the React app has two changes.
 
-    1.1 It uses port `3001` because fly.io defaults to `3000. `"start": "PORT=3001 react-scripts start",` 
+1. It uses port `3001` because fly.io defaults to `3000. `"start": "PORT=3001 react-scripts start",` 
 
-    1.2 It proxys AJAX requests from the React client to port `3000` so it can talk to the server. `"proxy": "http://localhost:3000"`
+2. It proxys AJAX requests from the React client to port `3000` so it can talk to the server. `"proxy": "http://localhost:3000"`
 
-2. After you are done making changes to the client app, do the following:
+### Updating React App to fly.io
+After you are done making changes to the client app, do the following:
 
-    2.1  Make sure to run `npm run build` to build a production version.
+1.  Make sure to run `npm run build` to build a production version.
 
-    2.2 Don't forget to update the newer versions of the JS, CSS files in `.fly.yml`. Currently the fly server needs us to manually add all the files into `.fly.yml`.
+2. Don't forget to update the newer versions of the JS, CSS files in `.fly.yml`. Currently the fly server needs us to manually add all the files into `.fly.yml`.
+3. The following shows the list of files that are being served in the current production app.
 
-## License
+```
+    files:
+        - client/build/index.html
+        - client/build/static/js/main.82baf497.js
+        - client/build/static/js/main.82baf497.js.map
+        - client/build/static/css/main.e1ef031f.css
+        - client/build/static/css/main.e1ef031f.css.map
+        - client/build/asset-manifest.json
+        - client/build/favicon.ico
+        - client/build/manifest.json
+        - client/build/service-worker.js
+```
+
+
+# License
 MIT
